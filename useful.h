@@ -24,5 +24,9 @@
 /***********\
  * STRUCTS *
 \***********/
+struct letter_list{
+    char curr;
+    struct list_head list;
+};
 
 #endif

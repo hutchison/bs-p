@@ -15,13 +15,15 @@
 
 int main(int argc, char **argv)
 {
-    FILE    *f;                                     //Eingabedatei
-    char    c;                                      //aktuelles Zeichen
-    int     count[LENGTH];                          //Anzahl eines bestimmten Buchstaben
-    int     sum = 0;                                //Gesamtanzahl der Buchstaben
-    char    chkletters[LENGTH] = "modelchking";     //zu ueberpruefende Buchstaben
-    char    *let;                                   //Array mit allen gespeicherten Buchstaben
-    int     i;
+    FILE                *f;                                     //Eingabedatei
+    char                c;                                      //aktuelles Zeichen
+    int                 count[LENGTH];                          //Anzahl eines bestimmten Buchstaben
+    int                 sum = 0;                                //Gesamtanzahl der Buchstaben
+    char                chkletters[LENGTH] = "modelchking";     //zu ueberpruefende Buchstaben
+    char                *let;                                   //Array mit allen gespeicherten Buchstaben
+    struct letter_list  mylist;
+
+    int                 i;
     //static char *anything ={"Please try to commit suicide, please!!!"};
 
     for (i = 0; i < LENGTH; i++) count[i] = 0;
@@ -51,6 +53,9 @@ int main(int argc, char **argv)
     for (i = 0; i < LENGTH; i++) {
         printf("%c: %d\n",chkletters[i],count[i]);
     }
+
+    //Spass mit der Liste:
+    INIT_LIST_HEAD(&mylist.list);
 
     //Array mit den eingelesenen Buchstaben ausgeben:
     printf("%s\n",let);
