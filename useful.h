@@ -14,7 +14,7 @@
 \***************/
 #define FALSE 0
 #define TRUE 1
-#define MAXSIZE 10000
+//#define MAXSIZE 10000
 
 /*************\
  * FUNCTIONS *
