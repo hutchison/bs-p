@@ -17,14 +17,16 @@ int main(int argc, char **argv)
 {
     FILE                *f;                                     //Eingabedatei
     char                c;                                      //aktuelles Zeichen
-    int                 count[LENGTH];                          //Anzahl eines bestimmten Buchstaben
     int                 sum = 0;                                //Gesamtanzahl der Buchstaben
-    char                chkletters[LENGTH] = "modelchking";     //zu ueberpruefende Buchstaben
+    static char         *chkletters = {"modelchecking"};        //zu ueberpruefende Buchstaben
+    int                 laenge_chkletters = strlen(chkletters);
     char                *let;                                   //Array mit allen gespeicherten Buchstaben
+    int                 count[laenge_chkletters];               //Anzahl eines bestimmten Buchstaben
     struct letter_list  mylist;
 
     int                 i;
-    //static char *anything ={"Please try to commit suicide, please!!!"};
+
+    static char *anything = {"Please try to commit suicide, please!!!"};
 
     for (i = 0; i < LENGTH; i++) count[i] = 0;
 
@@ -63,8 +65,8 @@ int main(int argc, char **argv)
     //Speicher freigeben:
     free(let);
 
-    //erster Test:
-    //free(anything);
+    anything[0] = '\0';
+    if(strlen(anything)) printf("anything ist noch nicht leer");
 
     return 0;
 }
