@@ -79,19 +79,18 @@ int main(int argc, char **argv)
 
     i = 0;
     INIT_LIST_HEAD(&sortedlist.list);
-    //while ( !(list_empty(&mylist.list)) ) {
+
     list_for_each_entry( temp, &mylist.list, list ){
         if( chkletters[i] == temp->curr ){
             printf("%c",temp->curr);
             i = (i+1) % laenge_chkletters;
             //list_move_tail( &(temp->list), &(sortedlist.list) );
-            list_add_tail( &(temp->list), &(sortedlist.list) );
+            //list_add( &(temp->list), &(sortedlist.list) );
         }
     }
     //list_move_tail( &(mylist.list), &(sortedlist.list) );
     //list_for_each_entry( temp, &mylist.list, list ) list_move_tail( &(temp->list), &(sortedlist.list));
     //list_del_init( &(mylist.list) );
-    //}
     printf("\n");
 
     //Liste in Datei schreiben:
@@ -101,7 +100,7 @@ int main(int argc, char **argv)
 
     free(let);
 
-    //anything[0] = '\0';
+    anything[0] = '\0';
     if(strlen(anything)) printf("anything ist noch nicht leer: %s\n",anything);
 
     return 0;
